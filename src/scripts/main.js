@@ -324,3 +324,25 @@ ghost2.shadow.camera.far = 7;
 ghost3.shadow.mapSize.height = 256;
 ghost3.shadow.mapSize.width = 256;
 ghost3.shadow.camera.far = 7;
+
+// LIL GUI
+
+const gui = new GUI();
+
+gui
+  .add(directionalLight, "intensity")
+  .min(0)
+  .max(1)
+  .step(0.01)
+  .name("Moon Intensity");
+
+gui.add(directionalLight.position, "x").min(-10).max(10).step(0.1);
+gui.add(directionalLight.position, "y").min(-10).max(10).step(0.1);
+gui.add(directionalLight.position, "z").min(-10).max(10).step(0.1);
+
+gui.add(ghost1, "intensity").min(0).max(10).step(0.1).name("Ghost 1");
+gui.add(ghost2, "intensity").min(0).max(10).step(0.1).name("Ghost 2");
+gui.add(ghost3, "intensity").min(0).max(10).step(0.1).name("Ghost 3");
+
+const lightFolder = gui.addFolder("Lights");
+lightFolder.add(directionalLight, "intensity", 0, 1, 0.01);
