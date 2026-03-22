@@ -10,7 +10,9 @@ const webgl = document.querySelector("#webgl");
 const scene = new THREE.Scene();
 
 // Fog
+// const fog = new THREE.Fog("#262837", 1, 15);
 const fog = new THREE.Fog("#262837", 1, 15);
+
 scene.fog = fog;
 
 // Camera
@@ -192,12 +194,24 @@ house.add(bush1, bush2, bush3, bush4);
 const graves = new THREE.Group();
 scene.add(graves);
 
+// Idea: Ghost slows down near graves
+
+graves.children.forEach((grave) => {
+  const dx = ghost1.position.x - grave.position.x;
+  const dz = ghost1.position.z - grave.position.z;
+  const distance = Math.sqrt(dx * dx + dz * dz);
+
+  if (distance < 1.5) {
+    ghost1.intensity = 4; // glow stronger near graves
+  }
+});
+
 const graveGeometry = new THREE.BoxGeometry(0.6, 0.8, 0.2);
 const graveMaterial = new THREE.MeshStandardMaterial({ color: "#b2b6b1" });
 
 for (let i = 0; i < 50; i++) {
   const angle = Math.random() * Math.PI * 2;
-  const radius = 3 + Math.random() * 6;
+  const radius = 3 + Math.random() * 6 + Math.sin(angle * 3) * 0.5;
   const x = Math.sin(angle) * radius;
   const z = Math.cos(angle) * radius;
   const grave = new THREE.Mesh(graveGeometry, graveMaterial);
