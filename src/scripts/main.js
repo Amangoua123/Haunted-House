@@ -26,39 +26,35 @@ camera.position.z = 7;
 //
 const textLoader = new THREE.TextureLoader();
 
-const doorColortexture = textLoader.load("/src/textures/door/color.jpg");
-const doorNormaltexture = textLoader.load("/src/textures/door/normal.jpg");
-const doorAlphatexture = textLoader.load("/src/textures/door/alpha.jpg");
+const doorColortexture = textLoader.load("./textures/door/color.jpg");
+const doorNormaltexture = textLoader.load("./textures/door/normal.jpg");
+const doorAlphatexture = textLoader.load("./textures/door/alpha.jpg");
 const doorAmbientOcclusiontexture = textLoader.load(
-  "/src/textures/door/ambientOcclusion.jpg",
+  "./textures/door/ambientOcclusion.jpg",
 );
-const doorHeightNormalexture = textLoader.load("/src/textures/door/height.jpg");
-const doorMetalnesstexture = textLoader.load(
-  "/src/textures/door/metalness.jpg",
-);
-const doorRoughnesstexture = textLoader.load(
-  "/src/textures/door/roughness.jpg",
-);
+const doorHeightNormalexture = textLoader.load("./textures/door/height.jpg");
+const doorMetalnesstexture = textLoader.load("./textures/door/metalness.jpg");
+const doorRoughnesstexture = textLoader.load("./textures/door/roughness.jpg");
 
 // Bricks texture
 
-const bricksColorTexture = textLoader.load("/src/textures/bricks/color.jpg");
+const bricksColorTexture = textLoader.load("./textures/bricks/color.jpg");
 const bricksAmbientOcclusionTexture = textLoader.load(
-  "/src/textures/bricks/ambientOcclusion.jpg",
+  "./textures/bricks/ambientOcclusion.jpg",
 );
-const bricksNormalTexture = textLoader.load("/src/textures/bricks/normal.jpg");
+const bricksNormalTexture = textLoader.load("./textures/bricks/normal.jpg");
 const bricksRoughtNessTexture = textLoader.load(
-  "/src/textures/bricks/roughness.jpg",
+  "./textures/bricks/roughness.jpg",
 );
 
 // Grass Texture
-const grassColorTexture = textLoader.load("/src/textures/grass/color.jpg");
+const grassColorTexture = textLoader.load("./textures/grass/color.jpg");
 const grassAmbientOcclusionTexture = textLoader.load(
-  "/src/textures/grass/ambientOcclusion.jpg",
+  "./textures/grass/ambientOcclusion.jpg",
 );
-const grassNormalTexture = textLoader.load("/src/textures/grass/normal.jpg");
+const grassNormalTexture = textLoader.load("./textures/grass/normal.jpg");
 const grassRoughtNessTexture = textLoader.load(
-  "/src/textures/grass/roughness.jpg",
+  "./textures/grass/roughness.jpg",
 );
 
 grassColorTexture.repeat.set(8, 8);
