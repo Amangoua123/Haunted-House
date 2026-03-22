@@ -1,3 +1,3 @@
-##Site created with ThreeJS
+## 🌍 Site created with ThreeJS
 
-View the website online (wwww.haunted-house.netlify.com)
+[View the website online] (wwww.haunted-house.netlify.com)
